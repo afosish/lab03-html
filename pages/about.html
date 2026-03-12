@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про мене — Медіа контент</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Головна</a> | 
+            <a href="about.html">Про мене</a> | 
+            <a href="contact.html">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Сторінка про мене</h1>
+        <p>На цій сторінці ви можете переглянути мої відеоматеріали та прослухати аудіозаписи.</p>
+
+        <h2>Моє навчальне відео</h2>
+        <video controls width="480">
+            <source src="../assets/media/demo.mp4" type="video/mp4">
+            <source src="../assets/media/demo.webm" type="video/webm">
+            <p>Ваш браузер не підтримує HTML-відео. 
+                <a href="../assets/media/demo.mp4">Завантажити відео</a>.
+            </p>
+        </video>
+
+        <h2>Мій улюблений аудіотрек</h2>
+        <audio controls>
+            <source src="../assets/media/demo.mp3" type="audio/mpeg">
+            <source src="../assets/media/demo.ogg" type="audio/ogg">
+            <p>Ваш браузер не підтримує цей аудіофайл. 
+                <a href="../assets/media/demo.mp3">Завантажити аудіо</a>.
+            </p>
+        </audio>
+
+        <div style="margin-top: 30px;">
+            <h2>Інтерактивна кнопка (Бонус)</h2>
+            <button id="bonus-btn">Натисни мене!</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Тимощук Максим. Всі права захищені.</p>
+    </footer>
+</body>
+</html>
