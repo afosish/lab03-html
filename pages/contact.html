@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти — Практична робота №1</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="about.html">Про мене</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Зв'яжіться зі мною</h1>
+        
+        <form action="./submit_page" method="GET">
+            <fieldset>
+                <legend>Ваші дані</legend>
+                
+                <p>
+                    <label for="username">Ім'я (обов'язково):</label>
+                    <input type="text" id="username" name="username" required minlength="2" maxlength="30">
+                </p>
+
+                <p>
+                    <label for="useremail">Email (обов'язково):</label>
+                    <input type="email" id="useremail" name="useremail" required>
+                </p>
+
+                <p>
+                    <label for="usertel">Телефон (необов'язково):</label>
+                    <input type="tel" id="usertel" name="usertel" pattern="[0-9]{10,12}" placeholder="380123456789">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Деталі звернення</legend>
+                
+                <p>
+                    <label for="subject">Тема звернення:</label>
+                    <select id="subject" name="subject">
+                        <option value="question">Запитання</option>
+                        <option value="cooperation">Співпраця</option>
+                        <option value="other">Інше</option>
+                    </select>
+                </p>
+
+                <p>Зручний спосіб зв'язку:</p>
+                <label>
+                    <input type="radio" name="contact_method" value="email" checked> Email
+                </label>
+                <label>
+                    <input type="radio" name="contact_method" value="phone"> Телефон
+                </label>
+
+                <p>
+                    <label for="message">Повідомлення:</label><br>
+                    <textarea id="message" name="message" rows="5" cols="40" placeholder="Напишіть тут ваше повідомлення..."></textarea>
+                </p>
+            </fieldset>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="agree" required> Я згоден з правилами обробки даних
+                </label>
+            </p>
+
+            <button type="submit">Надіслати</button>
+            <button type="reset">Очистити форму</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Тимощук Максим</p>
+    </footer>
+</body>
+</html>
