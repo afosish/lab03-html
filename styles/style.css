@@ -459,3 +459,154 @@ textarea::placeholder {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
 }
+/* --- НОВІ СТИЛІ ДЛЯ JS (додай в кінець style.css) --- */
+
+/* Темна тема */
+body.theme-dark {
+  --color-bg-main: #1a1613;
+  --color-bg-alt: #241f1c;
+  --color-surface: #2d2622;
+  --color-text-main: #e6dfd8;
+  --color-text-muted: #a89f96;
+  --color-border: #4a4036;
+  --color-primary: #a38f7d;
+  --color-primary-dark: #d4a373;
+}
+
+/* Керування UI елементами шапки */
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.theme-toggle, .burger-menu {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.burger-menu {
+  display: none;
+}
+
+/* Акордеон */
+.accordion { margin-top: 30px; }
+.accordion-item { border-bottom: 1px solid var(--color-border); }
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.accordion-header::after { content: '+'; }
+.accordion-header.active::after { content: '-'; }
+.accordion-content { padding: 0 0 15px 0; }
+
+.filter-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+}
+.modal-img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: var(--radius-md);
+}
+.modal-close {
+  position: absolute;
+  top: -40px; right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: #e63946;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 5px;
+}
+.char-count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  display: block;
+  margin-top: 5px;
+}
+.form-success {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-accent);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .burger-menu { display: block; }
+  .nav-list {
+    display: none;
+    width: 100%;
+  }
+  .nav-list.is-open { display: flex; }
+}
+.modal[hidden] {
+  display: none !important;
+}

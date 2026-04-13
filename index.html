@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Це мій навчальний сайт на HTML. Тут я вивчаю структуру тегів та роботу з контентом.">
     <title>Мій HTML-сайт</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Мій <span>Сайт</span></div>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Перемкнути тему">🌓</button>
+                <button class="burger-menu" aria-expanded="false" aria-label="Відкрити меню">☰</button>
+            </div>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Головна</a></li>
+                    <li><a href="index.html">Головна</a></li>
                     <li><a href="pages/about.html">Про мене</a></li>
                     <li><a href="pages/contact.html">Контакти</a></li>
                 </ul>
@@ -24,53 +28,52 @@
 
     <main class="container section">
         <h1>Сайт створено для диципліни WEB-РОЗРОБКА</h1>
-        <p>Я починаю вивчати <strong>Front-end розробку</strong>. Це цікавий шлях, який вимагає уваги до деталей. HTML — це основа всього вебу.</p>
-        <p>На цій сторінці я практикуюся використовувати семантичні теги та <em>правильно структурувати</em> інформацію.</p>
+        <p>Я починаю вивчати <strong>Front-end розробку</strong>. Це цікавий шлях, який вимагає уваги до деталей.</p>
 
         <div class="grid-3">
             <div class="card">
                 <h2>Мої цілі у навчанні</h2>
                 <ul>
-                    <li>Вивчити основи HTML5</li>
-                    <li>Навчитися стилізувати сторінки через CSS</li>
+                    <li>Вивчити основи HTML5 та CSS3</li>
+                    <li>Освоїти JavaScript та маніпуляції з DOM</li>
                     <li>Зробити свій перший інтерактивний проєкт</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h2>План роботи на тиждень</h2>
-                <ol>
-                    <li>Створити структуру сайту</li>
-                    <li>Наповнити сторінки контентом</li>
-                    <li>Перевірити валідацію коду</li>
-                </ol>
+                <h2>Часті запитання (FAQ)</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Чому саме Web-розробка?</button>
+                        <div class="accordion-content" hidden>Тому що це дозволяє створювати інтерфейси, якими щодня користуються мільйони людей.</div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Які технології використовуються?</button>
+                        <div class="accordion-content" hidden>На даному етапі це чистий HTML, CSS та ванільний JavaScript.</div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <figure style="margin-top: 40px;">
-            <img src="https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk" alt="Приклад зображення для навчання" width="640" height="360">
-            <figcaption>Приклад навчального зображення</figcaption>
+            <img class="modal-trigger" src="https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk" alt="Приклад зображення для навчання" style="cursor: zoom-in;">
+            <figcaption>Приклад навчального зображення (натисніть для збільшення)</figcaption>
         </figure>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>Мій Сайт</h3>
-                <p>Навчальний проєкт з дисципліни Web-розробка.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Навігація</h4>
-                <ul>
-                    <li><a href="index.html">Головна</a></li>
-                    <li><a href="pages/about.html">Про мене</a></li>
-                    <li><a href="pages/contact.html">Контакти</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Тимощук Максим. Всі права захищені.</p>
+        <div class="container footer-bottom">
+            <p>&copy; <span class="current-year"></span> Тимощук Максим. Всі права захищені.</p>
         </div>
     </footer>
+
+    <div class="modal" hidden>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img src="" alt="Збільшене зображення" class="modal-img">
+        </div>
+    </div>
+
+    <button class="back-to-top" hidden>↑</button>
 </body>
 </html>

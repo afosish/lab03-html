@@ -6,16 +6,20 @@
     <title>Про мене — Медіа контент</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
-    <script src="app.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Мій <span>Сайт</span></div>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Перемкнути тему">🌓</button>
+                <button class="burger-menu" aria-expanded="false" aria-label="Відкрити меню">☰</button>
+            </div>
             <nav>
                 <ul class="nav-list">
                     <li><a href="../index.html">Головна</a></li>
-                    <li><a href="about.html" class="active">Про мене</a></li>
+                    <li><a href="about.html">Про мене</a></li>
                     <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </nav>
@@ -24,78 +28,37 @@
 
     <main class="container section">
         <h1>Сторінка про мене</h1>
-        <p>На цій сторінці ви можете переглянути мої відеоматеріали, прослухати аудіозаписи та ознайомитися з моїм розкладом.</p>
-
-        <div class="custom-table-wrapper">
-            <div class="custom-table-caption">Розклад занять на тиждень</div>
-            <div class="custom-table">
-                <div class="custom-table-header">
-                    <div class="custom-table-cell">День</div>
-                    <div class="custom-table-cell">Предмет</div>
-                    <div class="custom-table-cell">Час</div>
-                </div>
-                <div class="custom-table-row">
-                    <div class="custom-table-cell">Понеділок</div>
-                    <div class="custom-table-cell">Web-програмування</div>
-                    <div class="custom-table-cell">09:00</div>
-                </div>
-                <div class="custom-table-row">
-                    <div class="custom-table-cell">Середа</div>
-                    <div class="custom-table-cell">Дизайн інтерфейсів</div>
-                    <div class="custom-table-cell">11:00</div>
-                </div>
-                <div class="custom-table-row">
-                    <div class="custom-table-cell">П'ятниця</div>
-                    <div class="custom-table-cell">Бази даних</div>
-                    <div class="custom-table-cell">13:00</div>
-                </div>
-            </div>
+        
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">Усі матеріали</button>
+            <button class="filter-btn" data-filter="video">Лише Відео</button>
+            <button class="filter-btn" data-filter="audio">Лише Аудіо</button>
         </div>
 
-        <div class="media-gallery" style="margin-top: 40px;">
-            <div class="card">
+        <div class="media-gallery">
+            <div class="card filter-item" data-category="video">
                 <h2>Моє навчальне відео</h2>
                 <video controls>
                     <source src="../assets/media/demo.mp4" type="video/mp4">
-                    <source src="../assets/media/demo.webm" type="video/webm">
-                    <p>Ваш браузер не підтримує HTML-відео. <a href="../assets/media/demo.mp4">Завантажити відео</a>.</p>
+                    <p>Ваш браузер не підтримує HTML-відео.</p>
                 </video>
             </div>
 
-            <div class="card">
+            <div class="card filter-item" data-category="audio">
                 <h2>Мій улюблений аудіотрек</h2>
                 <audio controls style="width: 100%; margin-top: 20px;">
                     <source src="../assets/media/demo.mp3" type="audio/mpeg">
-                    <source src="../assets/media/demo.ogg" type="audio/ogg">
-                    <p>Ваш браузер не підтримує цей аудіофайл. <a href="../assets/media/demo.mp3">Завантажити аудіо</a>.</p>
+                    <p>Ваш браузер не підтримує цей аудіофайл.</p>
                 </audio>
-                
-                <div style="margin-top: 40px;">
-                    <h3>Інтерактивна кнопка (Бонус)</h3>
-                    <button id="bonus-btn" class="btn btn-primary">Натисни мене!</button>
-                </div>
             </div>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>Мій Сайт</h3>
-                <p>Навчальний проєкт з дисципліни Web-розробка.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Навігація</h4>
-                <ul>
-                    <li><a href="../index.html">Головна</a></li>
-                    <li><a href="about.html">Про мене</a></li>
-                    <li><a href="contact.html">Контакти</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Тимощук Максим. Всі права захищені.</p>
+        <div class="container footer-bottom">
+            <p>&copy; <span class="current-year"></span> Тимощук Максим. Всі права захищені.</p>
         </div>
     </footer>
+    <button class="back-to-top" hidden>↑</button>
 </body>
 </html>
