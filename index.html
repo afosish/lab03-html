@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій HTML-сайт</title>
+    <title>Головна — Каталог курсів</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
     <script src="./js/main.js" defer></script>
+    <script src="./js/catalog.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -18,7 +19,7 @@
             </div>
             <nav>
                 <ul class="nav-list">
-                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="index.html" class="active">Головна</a></li>
                     <li><a href="pages/about.html">Про мене</a></li>
                     <li><a href="pages/contact.html">Контакти</a></li>
                 </ul>
@@ -28,9 +29,37 @@
 
     <main class="container section">
         <h1>Сайт створено для диципліни WEB-РОЗРОБКА</h1>
-        <p>Я починаю вивчати <strong>Front-end розробку</strong>. Це цікавий шлях, який вимагає уваги до деталей.</p>
+        <p>Я починаю вивчати <strong>Front-end розробку</strong>. Нижче ви можете ознайомитися з нашими курсами, які завантажуються динамічно.</p>
 
-        <div class="grid-3">
+        <div class="catalog-controls">
+            <input type="text" id="searchInput" placeholder="Пошук курсу..." class="catalog-search">
+            
+            <select id="categoryFilter" class="catalog-select">
+                <option value="all">Усі категорії</option>
+                <option value="frontend">Front-end</option>
+                <option value="backend">Back-end</option>
+                <option value="design">Дизайн</option>
+            </select>
+
+            <select id="sortSelect" class="catalog-select">
+                <option value="default">Сортування</option>
+                <option value="price-asc">Дешевші спочатку</option>
+                <option value="price-desc">Дорожчі спочатку</option>
+                <option value="title-asc">За назвою (А-Я)</option>
+            </select>
+        </div>
+
+        <div id="loadingState" class="status-msg">⏳ Завантажуємо дані...</div>
+        <div id="errorState" class="status-msg error-msg" hidden>❌ Помилка завантаження файлу items.json</div>
+        <div id="emptyState" class="status-msg" hidden>🔍 Нічого не знайдено за вашим запитом</div>
+
+        <div id="catalogContainer" class="grid-3" hidden></div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button id="loadMoreBtn" class="btn btn-outline" hidden>Показати ще</button>
+        </div>
+
+        <div class="grid-3" style="margin-top: 60px;">
             <div class="card">
                 <h2>Мої цілі у навчанні</h2>
                 <ul>
@@ -67,7 +96,18 @@
         </div>
     </footer>
 
-    <div class="modal" hidden>
+    <div id="detailsModal" class="modal" hidden>
+        <div class="modal-content card" style="max-width: 500px; width: 100%;">
+            <button class="modal-close" id="closeDetailsModal">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <p id="modalCategory" style="color: var(--color-accent); font-weight: bold;"></p>
+            <p id="modalDesc"></p>
+            <p><strong>Ціна:</strong> <span id="modalPrice"></span> грн</p>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 15px;">Записатися</button>
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal" hidden>
         <div class="modal-content">
             <button class="modal-close">&times;</button>
             <img src="" alt="Збільшене зображення" class="modal-img">

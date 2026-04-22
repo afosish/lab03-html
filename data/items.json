@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "title": "Основи HTML5 та CSS3",
+    "category": "frontend",
+    "price": 100,
+    "level": "Початківець",
+    "description": "Базовий курс зі створення структури та оформлення сучасних вебсторінок.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "2",
+    "title": "JavaScript: Повний курс",
+    "category": "frontend",
+    "price": 250,
+    "level": "Середній",
+    "description": "Глибоке вивчення синтаксису, асинхронності та маніпуляцій з DOM.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "3",
+    "title": "UX/UI Дизайн у Figma",
+    "category": "design",
+    "price": 150,
+    "level": "Початківець",
+    "description": "Проєктування зручних інтерфейсів та створення інтерактивних прототипів.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "4",
+    "title": "Node.js та Express",
+    "category": "backend",
+    "price": 300,
+    "level": "Просунутий",
+    "description": "Створення серверної частини застосунків та робота з базами даних.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "5",
+    "title": "React.js для розробників",
+    "category": "frontend",
+    "price": 400,
+    "level": "Просунутий",
+    "description": "Розробка сучасних SPA застосунків за допомогою компонентного підходу.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "6",
+    "title": "Основи веб-дизайну",
+    "category": "design",
+    "price": 90,
+    "level": "Початківець",
+    "description": "Композиція, колористика та основні принципи візуальної ієрархії.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "7",
+    "title": "Python для Backend",
+    "category": "backend",
+    "price": 280,
+    "level": "Середній",
+    "description": "Використання Python та Django для створення складних серверних систем.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  },
+  {
+    "id": "8",
+    "title": "TypeScript: Типізація",
+    "category": "frontend",
+    "price": 220,
+    "level": "Середній",
+    "description": "Навчання надійної розробки на JS за допомогою статичної типізації.",
+    "image": "https://yaknekruty.com.ua/sites/default/files/styles/1920x/public/2024-08/preloader-bg.jpg?itok=1jOOWKzk"
+  }
+]
